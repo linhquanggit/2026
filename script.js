@@ -65,7 +65,7 @@ Firework.prototype.draw = function() {
     ctx.stroke();
 }
 
-function Particle(x, y) {
+function Particle(x, y, hue) {
     this.x = x;
     this.y = y;
     this.coordinates = [];
@@ -77,7 +77,7 @@ function Particle(x, y) {
     this.speed = Math.random() * 10 + 1;
     this.friction = 0.95;
     this.gravity = 1;
-    this.hue = Math.random() * 360;
+    this.hue = hue;
     this.brightness = Math.random() * 50 + 50;
     this.alpha = 1;
     this.decay = Math.random() * 0.03 + 0.015;
@@ -105,9 +105,10 @@ Particle.prototype.draw = function() {
 }
 
 function createParticles(x, y) {
-    let particleCount = 30;
+    const hue = Math.random() * 360;
+    let particleCount = 100;
     while(particleCount--) {
-        particles.push(new Particle(x, y));
+        particles.push(new Particle(x, y, hue));
     }
 }
 
