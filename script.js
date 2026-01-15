@@ -154,3 +154,18 @@ canvas.addEventListener('click', function(e) {
     const startY = canvas.height;
     fireworks.push(new Firework(startX, startY, e.clientX, e.clientY));
 });
+
+const changeBgBtn = document.getElementById('change-bg-btn');
+
+changeBgBtn.addEventListener('click', () => {
+    document.body.style.backgroundColor = getRandomColor();
+});
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
