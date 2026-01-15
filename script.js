@@ -145,6 +145,13 @@ window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
 });
 
+const enjoyBtn = document.getElementById('enjoy-btn');
+const container = document.querySelector('.container');
+
+enjoyBtn.addEventListener('click', () => {
+    container.style.display = 'none';
+});
+
 // Thêm một vài pháo hoa khi click chuột
 canvas.addEventListener('click', function(e) {
     const startX = canvas.width / 2;
