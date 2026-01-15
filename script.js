@@ -145,12 +145,9 @@ window.addEventListener('resize', () => {
     canvas.height = window.innerHeight;
 });
 
-const enjoyBtn = document.getElementById('enjoy-btn');
 const container = document.querySelector('.container');
-
-enjoyBtn.addEventListener('click', () => {
-    container.style.display = 'none';
-});
+const fireworksCanvas = document.getElementById('fireworks');
+const gameCanvas = document.getElementById('game-canvas');
 
 // Thêm một vài pháo hoa khi click chuột
 canvas.addEventListener('click', function(e) {
