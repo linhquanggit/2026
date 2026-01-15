@@ -12,11 +12,12 @@ body {
 }
 
 .container {
-    z-index: 10;
+    z-index: 3; /* Higher than game-canvas (2) */
     position: relative;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
+    pointer-events: none; /* Allow clicks to pass through */
 }
 
 .year-text {
@@ -25,6 +26,7 @@ body {
     color: #f0f0f0;
     margin: 0;
     text-shadow: 0 0 5px #f0f0f0;
+    user-select: none; /* Prevent text selection */
 }
 
 .new-year-text {
@@ -33,12 +35,14 @@ body {
     color: #ffd700;
     margin: 0;
     text-shadow: 0 0 10px #ffd700, 0 0 20px #ffc400;
+    user-select: none; /* Prevent text selection */
 }
 
 .greeting {
     font-size: 1.5rem;
     color: #f0f0f0;
     margin-top: 10px;
+    user-select: none; /* Prevent text selection */
 }
 
 #fireworks {
@@ -69,7 +73,7 @@ body {
 #game-canvas {
     display: none;
     background-color: #000;
-    z-index: 2;
+    z-index: 2; /* Underneath the text container */
     position: absolute;
     top: 0;
     left: 0;
